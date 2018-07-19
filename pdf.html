@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+  <head>
+    <meta charset="UTF-8">
+    <title>JavaScriptによるPDF作成</title>
+    <link rel="stylesheet" href="css/style.css">
+    <script src="js/pdfmake.min.js"></script>  <!-- pdfmake -->
+    <script src="js/vfs_fonts.js"></script>    <!-- フォント -->
+    <script src="js/pdf.js"></script>       <!-- テスト02 -->
+  </head>
+
+  <body>
+
+    <form name="pdfform">
+      <p>作業依頼フォーム</p>
+      <div class="table"><label for="companyname">株式会社</label><input type="text" id="companyname" name="company_name"></div>
+      <div class="table"><label for="issue">件名</label><input type="text" id="issue" name="issue_name"></div>
+      <div class="table"><label for="request">作業依頼者</label><input type="text" id="request" name="requester"></div>
+      <div class="table"><label for="building">物件名</label><input type="text" id="building" name="building"></div>
+      <div class="table"><label for="place">住所</label><input type="text" id="place" name="address"></div>
+      <div class="table"><label for="telephone">電話番号</label><input type="tel" id="telephone" name="tel_number"></div>
+      <div class="table"><label for="fa">FAX</label><input type="text" id="fa" name="fax_number"></div>
+      <div class="table"><label for="happen">発生日</label><input type="date" id="happen" name="happened_date"></div>
+      <div class="table">
+        <label for="emergency">緊急度</label>
+        <select id="emergency" class="box" name="emergency">
+          <option selected>低</option>
+          <option>中</option>
+          <option>高</option>
+        </select>
+      </div>
+      <div class="table"><label for="construction">施工日</label><input type="date" id="construction" name="construction_date"></div>
+      <div class="table"><label for="booked">指定時間</label><input type="time" id="booked" name="booked_time"></div>
+      <div class="table"><label for="info">用件詳細</label><textarea id="info" name="information" placeholder="ex)天井から水漏れが発生したので対応お願いします。"></textarea></div>
+      <div class="button"><input type="button" value="SUBMIT"  id="submit" onclick="pdfOpen()"></div>
+    </form>
+  </body>
+
+</html>
