@@ -1,7 +1,6 @@
 //-------------------------
 // ボタンクリックイベント
 //-------------------------
-
 function pdfOpen() {
 
   //変数
@@ -123,11 +122,15 @@ function pdfOpen() {
   var name = getBrowser();
   // ブラウザことに処理を分岐
   // IEの場合
-  if (name == 'ie') {
-    pdfMake.createPdf(dd).download('optionalName.pdf');
-  // IE以外
+  if(document.forms['pdfform'].checkValidity()) {
+    if (name == 'ie') {
+      pdfMake.createPdf(dd).download('optionalName.pdf');
+      // IE以外
+    } else {
+      pdfMake.createPdf(dd).open();
+    }
   } else {
-    pdfMake.createPdf(dd).open();
+  return false;
   }
 }
 
