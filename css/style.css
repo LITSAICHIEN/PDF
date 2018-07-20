@@ -53,3 +53,7 @@ input, textarea  {
   width: 450px;
   height: 250px;
 }
+input:invalid {
+    color: red;
+    border: 2px solid red;
+}
